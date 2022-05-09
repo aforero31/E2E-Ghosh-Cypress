@@ -35,7 +35,7 @@ Funcionalidades y escenarios:
      - Editar Tag
      - Eliminar Tag
 
-Intrucciones para ejecutar las pruebas creadas con Kraken:
+Intrucciones para ejecutar las pruebas creadas con Cypress:
 
 - Instale Cypress en su computador siguiendo las instrucciones que se encuentra en: https://misovirtual.virtual.uniandes.edu.co/codelabs/cypress-tutorial/index.html#0
 - Despliegue la aplicación Ghost de forma local siguiendo este tutorial: https://misovirtual.virtual.uniandes.edu.co/codelabs/ghost-local-deployment/index.html#0
