@@ -1,6 +1,7 @@
 # E2E-Ghosh-Cypress
 
-Integrantes:
+Integrantes
+-----------
 
 * ANDERSON GIOVANNY CASTIBLANCO PRIETO (ag.castiblanco1207@uniandes.edu.co)
 * MARLON MAURICIO AGON FLOREZ (m.agonf@uniandes.edu.co)
@@ -9,7 +10,8 @@ Integrantes:
 
 Repositorio pruebas Kraken - Cypress.
 
-Funcionalidades y escenarios:
+Funcionalidades y escenarios
+----------------------------
 
   - Ingresar a la aplicacion:
       - Login exitoso y Logout
@@ -35,13 +37,32 @@ Funcionalidades y escenarios:
      - Editar Tag
      - Eliminar Tag
 
-Intrucciones para instalar las versiones de Ghost:
+  - Administración Pages
+     - Crear page borrador
+     - Crear page y programarla
+     - Crear page y publicarla
+     - Listar pages
+     - Listar pages borrador
+     - Listar pages programadas
+     - Listar pages por antiguedad de publicación
+     - Listar pages por antiguedad de actualización
+     - Listar pages programadas
+     - Listar pages publicadas
+     - Actualizar page - titulo
+     - Actualizar page - agregar tag
+     - Eliminar page borrador
+     - Eliminar page programada
+     - Eliminar page publicada
+
+
+Intrucciones para instalar las versiones de Ghost
+-------------------------------------------------
 
 - instalar docker usando el link de acuerdo a su sistema operativo: 
 
-https://docs.docker.com/desktop/mac/install/
-https://docs.docker.com/desktop/linux/install/
-https://docs.docker.com/desktop/windows/install/
+  https://docs.docker.com/desktop/mac/install/
+  https://docs.docker.com/desktop/linux/install/
+  https://docs.docker.com/desktop/windows/install/
 
 - instalar contenedor ghost 3.42 puerto 3001
 
@@ -60,7 +81,8 @@ docker run -d -e url=http://localhost:3002 -p 3002:2368 --name ghost_4.44.0 ghos
 - logout ghost 4.44
 
 
-Intrucciones para para instalar el proyecto de pruebas E2E con Cypress:
+Intrucciones para para instalar el proyecto de pruebas E2E con Cypress
+----------------------------------------------------------------------
 
 - Descargar, en la ruta donde trabajará las pruebas, el repositorio como archivo zip y descomprima o ejecutando en su consola:  
 
@@ -85,6 +107,7 @@ npm install cypress --save-dev
 
 
 Intrucciones para para ejecutar las pruebas E2E con Cypress
+-----------------------------------------------------------
 
 - para ejecutar pruebas sobre ghost 3.42, configurar el archivo cypress.json
 
@@ -102,12 +125,13 @@ Intrucciones para para ejecutar las pruebas E2E con Cypress
 
 - ejecutar pruebas cypress (no olvide ajustar el puerto y la versión en el archivo cypress.json)
 
-C:\Users\agonm\OneDrive\Escritorio\MISO\pruebasAutoSW\tests-e2e\cypress\node_modules\.bin\cypress run --headless --spec "cypress/integration/pages.spec.js"
+cypress\node_modules\.bin\cypress run --headless --spec "cypress/integration/pages.spec.js"
 
 * al finalizar la prueba, copiar los screenshots en una carpeta con la version, fuera del proyecto
 
 
 Instrucciones para reinstalar los contenedores 
+----------------------------------------------
 
 - en caso de necesitar re-ejecutar las pruebas es necesario detener y borrar los contenedores: 
 
@@ -118,7 +142,8 @@ y ejecutar nuevamente los pasos descritos al inicio de este documento para cada 
 instalar contenedor ghost, configurar usuario admin, logout 
 
 
-Sobre la implementación de las pruebas Cypress: 
+Sobre la implementación de las pruebas Cypress 
+----------------------------------------------
 
 - se implementó el patrón given-when-then para indicar la precondición o contexto del escenario, la acción sobre la aplicación bajo pruebas y el resultado esperado:
 
@@ -154,6 +179,7 @@ cypress/integration/pages.spec.js:
 
 cypress/support/commands.js
 
+...
 Cypress.Commands.add('listPages', () => {
     cy.get('a[href="#/pages/"]').click()
     cy.url().should('include', 'pages')
